@@ -9,14 +9,32 @@ EditorBuildSettings:
     path: Assets/Scenes/0 Home.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/1.unity
-    guid: 8bf09800f35c06346a2ae83b0beaa503
+    path: Assets/Scenes/3 Primordial Seas.unity
+    guid: 9db9cda3e59009d4ca44a4d6071f0bd2
   - enabled: 1
-    path: Assets/Scenes/2.unity
+    path: Assets/Scenes/4.1 Handu Hands.unity
     guid: a4a77344c6d63644da3b122c03fd263d
   - enabled: 1
-    path: Assets/Scenes/6.2.unity
+    path: Assets/Scenes/4.2 Particle Play.unity
+    guid: 1acb06b590a6cba458e595e8c8be134b
+  - enabled: 1
+    path: Assets/Scenes/5 Light.unity
+    guid: c11927d9a1083e445afa5b8915a68818
+  - enabled: 1
+    path: Assets/Scenes/6.1 Earth.unity
+    guid: 3a730ee19eff15d41b74f0e9663c5439
+  - enabled: 1
+    path: Assets/Scenes/6.2 Water.unity
     guid: 4c1087c594e9e89439c5939d45f1429e
+  - enabled: 1
+    path: Assets/Scenes/6.3 Wind.unity
+    guid: d5eb1ecb23fd092478a27074574f68e8
+  - enabled: 1
+    path: Assets/Scenes/6.4 Fire.unity
+    guid: f51b43bbc33bd6746b9aa12d72c35b70
+  - enabled: 1
+    path: Assets/Scenes/7 Beings.unity
+    guid: aa87a018666f9fb43be9f0e14f0316df
   m_configObjects:
     Unity.XR.PICO.LivePreview.Settings: {fileID: 11400000, guid: c2fa7ec4d61e66240b898751378ecca6, type: 2}
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 09c38c41cf5458045bdfcca884d6e65c, type: 2}

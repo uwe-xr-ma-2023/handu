@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneManagerWp1 : MonoBehaviour
+public class SceneManager62Water : MonoBehaviour
 {
     public AudioSource sceneAudio;
     public GameObject wavePrefab;
+    public GameObject waveContainer;
     private GameObject waveGameObject;
     private float timeToShowWave = 45.0f;
     private float timeToHideWave = 73.0f;
@@ -65,7 +66,8 @@ public class SceneManagerWp1 : MonoBehaviour
         float randomY = Random.Range(-0.5f, 0.5f);
         Vector3 randomOffset = new Vector3(randomX, randomY, 0);
         Vector3 randomPosition = wavePrefab.transform.position + randomOffset;
-        waveGameObject = Instantiate(wavePrefab, randomPosition, wavePrefab.transform.rotation);
+        // wave is instatiated inside waveContainer so that it is deleted on scene change
+        waveGameObject = Instantiate(wavePrefab, randomPosition, wavePrefab.transform.rotation, waveContainer.transform);
         waveChildCount = waveGameObject.transform.childCount;
     }
 }

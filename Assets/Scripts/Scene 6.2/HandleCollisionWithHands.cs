@@ -6,13 +6,13 @@ public class HandleCollisionWithHands : MonoBehaviour
 {
     private AudioSource audioSource;
     private Renderer _renderer;
-    private SceneManagerWp1 sceneManager;
+    private SceneManager62Water sceneManager;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         _renderer = GetComponent<Renderer>();
-        sceneManager = GameObject.Find("Scene Manager").GetComponent<SceneManagerWp1>();
+        sceneManager = GameObject.Find("Scene Manager").GetComponent<SceneManager62Water>();
     }
 
     public void OnHoverBegin()
