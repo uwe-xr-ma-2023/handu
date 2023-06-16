@@ -14,7 +14,6 @@ public class HandleSeaTouch : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         meshRenderer = GetComponent<Renderer>();
-        meshRenderer.material = white50;
     }
     public void OnSeaTouchStart()
     {
