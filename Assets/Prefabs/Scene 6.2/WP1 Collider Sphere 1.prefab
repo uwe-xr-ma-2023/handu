@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5254316222229341153}
   - component: {fileID: 1118109038417142856}
   - component: {fileID: 1589438089765970356}
-  - component: {fileID: 9142322501325577686}
   - component: {fileID: 8740540651598224576}
   m_Layer: 0
   m_Name: WP1 Collider Sphere 1
@@ -171,7 +170,7 @@ MonoBehaviour:
       callback:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 9142322501325577686}
+          - m_Target: {fileID: 0}
             m_TargetAssemblyTypeName: HandleCollisionWithHands, Assembly-CSharp
             m_MethodName: OnHoverBegin
             m_Mode: 1
@@ -183,18 +182,6 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
---- !u!114 &9142322501325577686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4193179075179077168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 839917d2402bfb144a00338db2c2e879, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &8740540651598224576
 AudioSource:
   m_ObjectHideFlags: 0
@@ -205,7 +192,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5849046989794950732, guid: 6828ae4386e13074b862eea3343745d9, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 54100447151f88b48b26b03e3692e54c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b307648d3192e034483e5fc2fb7a5f89, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
