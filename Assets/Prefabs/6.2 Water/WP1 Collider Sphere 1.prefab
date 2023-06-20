@@ -173,7 +173,7 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 6917352894829911955}
             m_TargetAssemblyTypeName: HandleCollisionWithHands, Assembly-CSharp
-            m_MethodName: OnHoverBegin
+            m_MethodName: OnContactBegin
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}

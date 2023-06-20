@@ -155,6 +155,8 @@ MonoBehaviour:
   sceneAudio: {fileID: 0}
   wavePrefab: {fileID: 4305741551746112042, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
   waveContainer: {fileID: 1574212360}
+  handPrefab: {fileID: 509093463859065885, guid: 2655081de50e13a4281480efd1ffad5c, type: 3}
+  seatedMode: 0
 --- !u!4 &81909184
 Transform:
   m_ObjectHideFlags: 0
@@ -194,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574212360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04159241, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
