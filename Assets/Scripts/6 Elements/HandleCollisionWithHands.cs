@@ -6,14 +6,14 @@ public class HandleCollisionWithHands : MonoBehaviour
 {
     private AudioSource audioSource;
     private Renderer _renderer;
-    private SceneManager62Water sceneManager;
+    private ElementsSceneManager sceneManager;
     private bool collided = false;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         _renderer = GetComponent<Renderer>();
-        sceneManager = GameObject.Find("Scene Manager").GetComponent<SceneManager62Water>();
+        sceneManager = GameObject.Find("Elements Scene Manager").GetComponent<ElementsSceneManager>();
     }
 
     public void OnContactBegin()
@@ -25,11 +25,12 @@ public class HandleCollisionWithHands : MonoBehaviour
         collided = true;
         audioSource.Play();
         _renderer.enabled = false;
-        sceneManager.IncreaseWaveChildCollidedCount();
+        sceneManager.IncreaseGestureGuideChildCollidedCount();
         StartCoroutine(WaitForAudioEnd());
     }
 
     IEnumerator WaitForAudioEnd()
+
     {
         yield return new WaitUntil(() => audioSource.isPlaying == false);
         Destroy(gameObject);

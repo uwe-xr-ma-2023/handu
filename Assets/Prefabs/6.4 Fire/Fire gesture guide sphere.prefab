@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8740540651598224576}
   - component: {fileID: 6917352894829911955}
   m_Layer: 0
-  m_Name: WP1 Collider Sphere 1
+  m_Name: Fire gesture guide sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5849046989794950732, guid: 6828ae4386e13074b862eea3343745d9, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b307648d3192e034483e5fc2fb7a5f89, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3541c36254e1aba4fabfac2504186bb8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -10,6 +10,7 @@ public class ElementsSceneManager : MonoBehaviour
     public bool seatedMode;
     private float seatedRange = 0.01f;
     private float standingRange = 0.5f;
+    private float timeToHideHands = 3f;
     private float gestureGuideStartPosRange;
     private int gestureGuideChildCount;
     private int gestureGuideChildCollidedCount;
@@ -48,5 +49,29 @@ public class ElementsSceneManager : MonoBehaviour
         // instatiated inside container game object so that it is deleted on scene change
         GameObject gestureGuide = Instantiate(gestureGuidePrefab, randomPosition, gestureGuidePrefab.transform.rotation, gameObjectContainer.transform);
         gestureGuideChildCount = gestureGuide.transform.childCount;
+    }
+
+    public void IncreaseGestureGuideChildCollidedCount()
+    {
+        gestureGuideChildCollidedCount++;
+        if (gestureGuideChildCollidedCount == gestureGuideChildCount)
+        {
+            CreateGestureGuide();
+            CreateHandAnimation();
+        }
+    }
+
+    private void CreateHandAnimation()
+    {
+        // instatiated inside container game object so that it is deleted on scene change
+        currentHandAnimationGameObjects = Instantiate(handAnimationPrefab, rightHandIndexFinger.TipPosition, rightHand.Rotation, gameObjectContainer.transform);
+        handAnimationTrackHands = true;
+        StartCoroutine(WaitForHandPrefabHide());
+    }
+
+    IEnumerator WaitForHandPrefabHide()
+    {
+        yield return new WaitForSeconds(timeToHideHands);
+        handAnimationTrackHands = false;
     }
 }
