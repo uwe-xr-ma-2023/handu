@@ -8,6 +8,8 @@ public class SceneChanger : MonoBehaviour
 {
     private int currentSceneIndex = -1;
     public string[] scenes;
+    public GameObject handsScene4;
+    public GameObject handsScene7;
     private List<UnityEngine.XR.InputDevice> devices;
     bool changingScenes = false;
 
@@ -48,13 +50,60 @@ public class SceneChanger : MonoBehaviour
             return;
         }
         changingScenes = true;
-        if (currentSceneIndex != -1)
+        UnloadScene(currentSceneIndex);
+        LoadScene(newSceneIndex);
+    }
+
+    private void LoadScene(int sceneIndex)
+    {
+        if (sceneIndex == 1 || sceneIndex == 2)
         {
-            SceneManager.UnloadSceneAsync(scenes[currentSceneIndex]);
+            EnterScene4();
         }
-        SceneManager.LoadScene(scenes[newSceneIndex], LoadSceneMode.Additive);
-        currentSceneIndex = newSceneIndex;
+        else if (sceneIndex == 8)
+        {
+            EnterScene7();
+        }
+        SceneManager.LoadScene(scenes[sceneIndex], LoadSceneMode.Additive);
+        currentSceneIndex = sceneIndex;
         StartCoroutine(DebounceSceneChange());
+    }
+
+    private void UnloadScene(int sceneIndex)
+    {
+        if (sceneIndex == -1)
+        {
+            return;
+        }
+        if (sceneIndex == 1 || sceneIndex == 2)
+        {
+            LeaveScene4();
+        }
+        else if (sceneIndex == 8)
+        {
+            LeaveScene7();
+        }
+        SceneManager.UnloadSceneAsync(scenes[sceneIndex]);
+    }
+
+    private void EnterScene4()
+    {
+        handsScene4.SetActive(true);
+    }
+
+    private void LeaveScene4()
+    {
+        handsScene4.SetActive(false);
+    }
+
+    private void EnterScene7()
+    {
+        handsScene7.SetActive(true);
+    }
+
+    private void LeaveScene7()
+    {
+        handsScene7.SetActive(false);
     }
 
     private IEnumerator DebounceSceneChange()
