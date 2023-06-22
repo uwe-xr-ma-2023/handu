@@ -2,14 +2,19 @@ using Leap;
 using Leap.Unity.HandsModule;
 using Leap.Unity;
 using UnityEngine;
-using System.Collections.Generic;
+using System.Collections;
 
 public class LightSceneManager : MonoBehaviour
 {
     public GameObject orbPrefab;
+    public GameObject sceneContainer;
+    [Tooltip("How long the pose must be held for before orb is spawned")]
+    public float poseHoldDuration = 0f;
+    private GameObject currentOrbPrefab;
     private bool leftHandPoseDetected = false;
     private bool rightHandPoseDetected = false;
     private SceneChanger sceneChanger;
+    private bool trackOrbToHands = false;
 
 
     private void Start()
@@ -17,6 +22,15 @@ public class LightSceneManager : MonoBehaviour
         sceneChanger = GameObject.Find("SceneChanger").GetComponent<SceneChanger>();
     }
 
+    private void Update()
+    {
+        if (!trackOrbToHands)
+        {
+            return;
+        }
+        Vector3 centerPoint = GetCenterPointBetweenHands();
+        currentOrbPrefab.transform.position = centerPoint;
+    }
 
 
     private Vector3 GetCenterPointBetweenHands()
@@ -39,11 +53,18 @@ public class LightSceneManager : MonoBehaviour
 
         if (leftHandPoseDetected && rightHandPoseDetected)
         {
-            orbPrefab.SetActive(true);
-            Vector3 centerPoint = GetCenterPointBetweenHands();
-            orbPrefab.transform.position = centerPoint;
+            StartCoroutine(DebouncePoseDetect());
         }
     }
+
+    private IEnumerator DebouncePoseDetect()
+    {
+        yield return new WaitForSeconds(poseHoldDuration);
+        currentOrbPrefab = Instantiate(orbPrefab, sceneContainer.transform);
+        trackOrbToHands = true;
+    }
+
+
 
     public void OnPoseLost(string hand)
     {
@@ -58,7 +79,8 @@ public class LightSceneManager : MonoBehaviour
 
         if (!leftHandPoseDetected || !rightHandPoseDetected)
         {
-            orbPrefab.SetActive(false);
+            trackOrbToHands = false;
+            StopCoroutine(DebouncePoseDetect());
         }
     }
 
