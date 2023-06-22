@@ -19,6 +19,7 @@ using UnityEditor.SceneManagement;
 [InitializeOnLoad]
 static class SceneAutoLoader
 {
+	static string homeScene = "Assets/Scenes/0 Home.unity";
 	// Static constructor binds a playmode-changed callback.
 	// [InitializeOnLoad] above makes sure this gets executed.
 	static SceneAutoLoader()
@@ -77,7 +78,7 @@ static class SceneAutoLoader
 			{
 				try
 				{
-					EditorSceneManager.OpenScene(MasterScene);
+					EditorSceneManager.OpenScene(MasterScene);					
 				}
 				catch
 				{
@@ -106,6 +107,11 @@ static class SceneAutoLoader
 				Debug.LogError(string.Format("error: scene not found: {0}", PreviousScene));
 			}
 		}
+
+		if (EditorApplication.isPlaying && EditorApplication.isPlayingOrWillChangePlaymode && PreviousScene != homeScene)
+        {
+			EditorSceneManager.LoadScene(PreviousScene, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+		}
 	}
 
 	// Properties are remembered as editor preferences.
@@ -121,8 +127,8 @@ static class SceneAutoLoader
 
 	private static string MasterScene
 	{
-		get { return EditorPrefs.GetString(cEditorPrefMasterScene, "Master.unity"); }
-		set { EditorPrefs.SetString(cEditorPrefMasterScene, value); }
+		get { return homeScene; }
+		set { homeScene = value; }
 	}
 
 	private static string PreviousScene
