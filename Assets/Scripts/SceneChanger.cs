@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Leap.Unity.Interaction;
+using Leap.Unity;
 
 public class SceneChanger : MonoBehaviour
 {
@@ -10,6 +10,7 @@ public class SceneChanger : MonoBehaviour
     public string[] scenes;
     public GameObject handsScene4;
     public GameObject handsScene7;
+    public LeapXRServiceProvider ultraleapService;
     private List<UnityEngine.XR.InputDevice> devices;
     bool changingScenes = false;
 
