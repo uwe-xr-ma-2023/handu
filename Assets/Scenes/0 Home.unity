@@ -22553,6 +22553,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: mainSound
+      value: 
+      objectReference: {fileID: 1964590590}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handsScene4
       value: 
       objectReference: {fileID: 1328040515}
@@ -22603,6 +22607,262 @@ PrefabInstance:
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: scenes.Array.data[8]
       value: 7 Beings
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[0].name
+      value: 3 Primordial Seas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[1].name
+      value: 4.1 Handu Hands
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[2].name
+      value: 4.2 Particle Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[3].name
+      value: 5 Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[4].name
+      value: 6.1 Earth
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[5].name
+      value: 6.2 Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[6].name
+      value: 6.3 Wind
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[7].name
+      value: 6.4 Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].name
+      value: 7 Beings
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[9].name
+      value: 7 Beings
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[0].m_strength
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[0].scene._name
+      value: 3 Primordial Seas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[0].scene._path
+      value: Assets/Scenes/3 Primordial Seas.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[1].scene._name
+      value: 4.1 Handu Hands
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[1].scene._path
+      value: Assets/Scenes/4.1 Handu Hands.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[2].scene._name
+      value: 4.2 Particle Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[2].scene._path
+      value: Assets/Scenes/4.2 Particle Play.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[3].scene._name
+      value: 5 Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[3].scene._path
+      value: Assets/Scenes/5 Light.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[4].scene._name
+      value: 6.1 Earth
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[4].scene._path
+      value: Assets/Scenes/6.1 Earth.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[5].scene._name
+      value: 6.2 Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[5].scene._path
+      value: Assets/Scenes/6.2 Water.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[6].scene._name
+      value: 6.3 Wind
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[6].scene._path
+      value: Assets/Scenes/6.3 Wind.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[7].scene._name
+      value: 6.4 Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[7].scene._path
+      value: Assets/Scenes/6.4 Fire.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].scene._name
+      value: 7 Beings
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].scene._path
+      value: Assets/Scenes/7 Beings.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[0].scene._sceneOB
+      value: 
+      objectReference: {fileID: 102900000, guid: 9db9cda3e59009d4ca44a4d6071f0bd2, type: 3}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[1].scene._sceneOB
+      value: 
+      objectReference: {fileID: 102900000, guid: a4a77344c6d63644da3b122c03fd263d, type: 3}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[2].scene._sceneOB
+      value: 
+      objectReference: {fileID: 102900000, guid: 1acb06b590a6cba458e595e8c8be134b, type: 3}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[3].scene._sceneOB
+      value: 
+      objectReference: {fileID: 102900000, guid: c11927d9a1083e445afa5b8915a68818, type: 3}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[4].scene._sceneOB
+      value: 
+      objectReference: {fileID: 102900000, guid: 3a730ee19eff15d41b74f0e9663c5439, type: 3}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[5].scene._sceneOB
+      value: 
+      objectReference: {fileID: 102900000, guid: 4c1087c594e9e89439c5939d45f1429e, type: 3}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[6].scene._sceneOB
+      value: 
+      objectReference: {fileID: 102900000, guid: d5eb1ecb23fd092478a27074574f68e8, type: 3}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[7].scene._sceneOB
+      value: 
+      objectReference: {fileID: 102900000, guid: f51b43bbc33bd6746b9aa12d72c35b70, type: 3}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].scene._sceneOB
+      value: 
+      objectReference: {fileID: 102900000, guid: aa87a018666f9fb43be9f0e14f0316df, type: 3}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[0].scene._buildIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[1].scene._buildIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[2].scene._buildIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[3].scene._buildIndex
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[4].scene._buildIndex
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[5].scene._buildIndex
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[6].scene._buildIndex
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[7].scene._buildIndex
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].scene._buildIndex
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[0].mainAudioPosition.minutes
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[0].mainAudioPosition.seconds
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[1].mainAudioPosition.minutes
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[1].mainAudioPosition.seconds
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[2].mainAudioPosition.minutes
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[2].mainAudioPosition.seconds
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[3].mainAudioPosition.minutes
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[3].mainAudioPosition.seconds
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[4].mainAudioPosition.minutes
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[4].mainAudioPosition.seconds
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[5].mainAudioPosition.minutes
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[6].mainAudioPosition.minutes
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[6].mainAudioPosition.seconds
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[7].mainAudioPosition.minutes
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].mainAudioPosition.minutes
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].mainAudioPosition.seconds
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4427231722471175114, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: m_Name

@@ -78,7 +78,7 @@ static class SceneAutoLoader
 			{
 				try
 				{
-					EditorSceneManager.OpenScene(MasterScene);					
+					EditorSceneManager.OpenScene(MasterScene);
 				}
 				catch
 				{
@@ -110,8 +110,13 @@ static class SceneAutoLoader
 
 		if (EditorApplication.isPlaying && EditorApplication.isPlayingOrWillChangePlaymode && PreviousScene != homeScene)
         {
-			EditorSceneManager.LoadScene(PreviousScene, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+			LoadAdditiveScene(PreviousScene);
 		}
+	}
+
+	private static void LoadAdditiveScene(string previousScenePath) {
+		MainSceneManager mainSceneManager = GameObject.Find("MainSceneManager").GetComponent<MainSceneManager>();
+		mainSceneManager.LoadSceneByPath(previousScenePath);
 	}
 
 	// Properties are remembered as editor preferences.

@@ -3,13 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Leap.Unity;
+using Udar.SceneManager;
 
 public class MainSceneManager : MonoBehaviour
 {
     private int currentSceneIndex = -1;
-    public string[] scenes;
     public GameObject handsScene4;
     public GameObject handsScene7;
+    public AudioSource mainSound;
+    [System.Serializable]
+    public struct MainAudioPosition
+    {
+        public int minutes;
+        public int seconds;
+    }
+    [System.Serializable]
+    public struct HanduScene
+    {        
+        public SceneField scene;
+        public MainAudioPosition mainAudioPosition;
+
+    }
+    [SerializeField]
+    private List<HanduScene> handuScenes = new List<HanduScene>();
+
+
     public LeapXRServiceProvider ultraleapService;
     private List<UnityEngine.XR.InputDevice> devices;
     bool changingScenes = false;
@@ -46,7 +64,7 @@ public class MainSceneManager : MonoBehaviour
 
     public void ChangeScene(int newSceneIndex)
     {
-        if (changingScenes || newSceneIndex >= scenes.Length)
+        if (changingScenes || newSceneIndex >= handuScenes.Count)
         {
             return;
         }
@@ -55,8 +73,20 @@ public class MainSceneManager : MonoBehaviour
         LoadScene(newSceneIndex);
     }
 
+    private float GetSecondsFromTime(MainAudioPosition mainAudioPosition)
+    {
+        return (mainAudioPosition.minutes * 60) + mainAudioPosition.seconds;
+    }
+
+    public void LoadSceneByPath(string scenePath)
+    {
+        int sceneIndex = handuScenes.FindIndex(s => s.scene.Path == scenePath);
+        LoadScene(sceneIndex);
+    }
+
     private void LoadScene(int sceneIndex)
     {
+        var scene = handuScenes[sceneIndex];
         if (sceneIndex == 1 || sceneIndex == 2)
         {
             EnterScene4();
@@ -65,8 +95,9 @@ public class MainSceneManager : MonoBehaviour
         {
             EnterScene7();
         }
-        SceneManager.LoadScene(scenes[sceneIndex], LoadSceneMode.Additive);
+        SceneManager.LoadScene(scene.scene.Path, LoadSceneMode.Additive);
         currentSceneIndex = sceneIndex;
+        mainSound.time = GetSecondsFromTime(scene.mainAudioPosition);
         StartCoroutine(DebounceSceneChange());
     }
 
@@ -84,7 +115,7 @@ public class MainSceneManager : MonoBehaviour
         {
             LeaveScene7();
         }
-        SceneManager.UnloadSceneAsync(scenes[sceneIndex]);
+        SceneManager.UnloadSceneAsync(handuScenes[sceneIndex].scene.Path);
     }
 
     private void EnterScene4()
