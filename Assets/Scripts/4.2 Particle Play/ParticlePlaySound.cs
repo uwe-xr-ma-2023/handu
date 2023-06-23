@@ -16,9 +16,4 @@ public class ParticlePlaySound : MonoBehaviour
     {
         audioSource.Play();
     }
-
-    public void StopAudio()
-    {
-        audioSource.Stop();
-    }
 }
