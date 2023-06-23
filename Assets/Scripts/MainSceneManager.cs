@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Leap.Unity;
 
-public class SceneChanger : MonoBehaviour
+public class MainSceneManager : MonoBehaviour
 {
     private int currentSceneIndex = -1;
     public string[] scenes;

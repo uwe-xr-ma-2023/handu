@@ -13,13 +13,13 @@ public class LightSceneManager : MonoBehaviour
     private GameObject currentOrbPrefab;
     private bool leftHandPoseDetected = false;
     private bool rightHandPoseDetected = false;
-    private SceneChanger sceneChanger;
+    private MainSceneManager mainSceneManager;
     private bool trackOrbToHands = false;
 
 
     private void Start()
     {
-        sceneChanger = GameObject.Find("SceneChanger").GetComponent<SceneChanger>();
+        mainSceneManager = GameObject.Find("MainSceneManager").GetComponent<MainSceneManager>();
     }
 
     private void Update()
@@ -35,8 +35,8 @@ public class LightSceneManager : MonoBehaviour
 
     private Vector3 GetCenterPointBetweenHands()
     {
-        Hand leftHand = sceneChanger.ultraleapService.GetHand(Chirality.Left);
-        Hand rightHand = sceneChanger.ultraleapService.GetHand(Chirality.Right);
+        Hand leftHand = mainSceneManager.ultraleapService.GetHand(Chirality.Left);
+        Hand rightHand = mainSceneManager.ultraleapService.GetHand(Chirality.Right);
         Vector3 handCenterPoint = (rightHand.PalmPosition + leftHand.PalmPosition) / 2;
         return handCenterPoint;
     }
