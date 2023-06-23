@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Leap;
+using Leap.Unity.HandsModule;
+using Leap.Unity;
 
 public class ElementsSceneManager : MonoBehaviour
 {
@@ -11,21 +14,18 @@ public class ElementsSceneManager : MonoBehaviour
     private float seatedRange = 0.01f;
     private float standingRange = 0.5f;
     private float timeToHideHands = 3f;
+    private MainSceneManager mainSceneManager;
     private float gestureGuideStartPosRange;
     private int gestureGuideChildCount;
     private int gestureGuideChildCollidedCount;
     private Leap.Unity.HandModelBase rightHandModel;
-    private Leap.Hand rightHand;
-    private Leap.Finger rightHandIndexFinger;
     private bool handAnimationTrackHands = false;
     private GameObject currentHandAnimationGameObjects;
 
     void Start()
     {
+        mainSceneManager = GameObject.Find("MainSceneManager").GetComponent<MainSceneManager>();
         gestureGuideStartPosRange = seatedMode ? seatedRange : standingRange;
-        rightHandModel = GameObject.Find("Generic Hand_Right").GetComponent<Leap.Unity.HandsModule.HandBinder>();
-        rightHand = rightHandModel.GetLeapHand();
-        rightHandIndexFinger = rightHand.Fingers.Find((finger) => finger.Type == Leap.Finger.FingerType.TYPE_INDEX);
         CreateGestureGuide();
     }
 
@@ -34,9 +34,18 @@ public class ElementsSceneManager : MonoBehaviour
         // Track hand animation against user hands
         if (handAnimationTrackHands && currentHandAnimationGameObjects)
         {
-            currentHandAnimationGameObjects.transform.position = rightHandIndexFinger.TipPosition;
-            currentHandAnimationGameObjects.transform.rotation = rightHand.Rotation;
+            (Quaternion, Vector3) handPositionRotation = GetHandPositionRotation();
+            currentHandAnimationGameObjects.transform.rotation = handPositionRotation.Item1;
+            currentHandAnimationGameObjects.transform.position = handPositionRotation.Item2;
         }
+    }
+
+
+    private (Quaternion, Vector3) GetHandPositionRotation()
+    {
+        var rightHand = mainSceneManager.ultraleapService.GetHand(Chirality.Right);
+        var rightHandIndexFinger = rightHand.Fingers.Find((finger) => finger.Type == Leap.Finger.FingerType.TYPE_INDEX);
+        return (rightHand.Rotation, rightHandIndexFinger.TipPosition);
     }
 
     private void CreateGestureGuide()
@@ -63,8 +72,11 @@ public class ElementsSceneManager : MonoBehaviour
 
     private void CreateHandAnimation()
     {
+        (Quaternion, Vector3) handPositionRotation = GetHandPositionRotation();
+        var rotation = handPositionRotation.Item1;
+        var position = handPositionRotation.Item2;
         // instatiated inside container game object so that it is deleted on scene change
-        currentHandAnimationGameObjects = Instantiate(handAnimationPrefab, rightHandIndexFinger.TipPosition, rightHand.Rotation, gameObjectContainer.transform);
+        currentHandAnimationGameObjects = Instantiate(handAnimationPrefab, position, rotation, gameObjectContainer.transform);
         handAnimationTrackHands = true;
         StartCoroutine(WaitForHandPrefabHide());
     }
