@@ -186,7 +186,7 @@ MonoBehaviour:
   gestureGuidePrefab: {fileID: 4305741551746112042, guid: 466fad03a45703f4eae40c8906ee4010, type: 3}
   gameObjectContainer: {fileID: 1045739486}
   handAnimationPrefab: {fileID: 509093463859065885, guid: 05de97f866c44184a81fcf04335ecee5, type: 3}
-  seatedMode: 1
+  seatedMode: 0
 --- !u!4 &1916271528
 Transform:
   m_ObjectHideFlags: 0

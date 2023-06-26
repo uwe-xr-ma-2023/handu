@@ -5344,7 +5344,7 @@ MonoBehaviour:
 <<<<<<< Updated upstream
   particlePrefab: {fileID: 8435769281238777770, guid: 46283829453070c46896cd38a6c0f172, type: 3}
   container: {fileID: 579414896}
-  numberOfParticles: 54
+  numberOfParticles: 100
   particleScaleMinimum: 0.0136
   particleScaleMaximum: 0.1
   particleAreaXMin: -3

@@ -13,12 +13,11 @@ public class ElementsSceneManager : MonoBehaviour
     public bool seatedMode;
     private float seatedRange = 0.01f;
     private float standingRange = 0.5f;
-    private float timeToHideHands = 3f;
+    private float timeToHideHands = 5f;
     private MainSceneManager mainSceneManager;
     private float gestureGuideStartPosRange;
     private int gestureGuideChildCount;
     private int gestureGuideChildCollidedCount;
-    private Leap.Unity.HandModelBase rightHandModel;
     private bool handAnimationTrackHands = false;
     private GameObject currentHandAnimationGameObjects;
 
