@@ -18,7 +18,6 @@ public class ElementsSceneManager : MonoBehaviour
     private float gestureGuideStartPosRange;
     private int gestureGuideChildCount;
     private int gestureGuideChildCollidedCount;
-    private Leap.Unity.HandModelBase rightHandModel;
     private bool handAnimationTrackHands = false;
     private GameObject currentHandAnimationGameObjects;
 
