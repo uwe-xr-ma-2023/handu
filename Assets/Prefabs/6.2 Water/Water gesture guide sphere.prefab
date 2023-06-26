@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1589438089765970356}
   - component: {fileID: 8740540651598224576}
   - component: {fileID: 6917352894829911955}
+  - component: {fileID: 8073527606077508209}
   m_Layer: 0
   m_Name: Water gesture guide sphere
   m_TagString: Untagged
@@ -291,3 +292,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2367e977dfd5a2e47bd3a33c5a36b6b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &8073527606077508209
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4193179075179077168}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 088344e1961a6b243ae1b569b9eaaeb3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

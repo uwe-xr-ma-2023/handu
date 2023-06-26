@@ -210,6 +210,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 452021162078964979, guid: 08f694c12111dbc41b59c2891915b348, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0044
+      objectReference: {fileID: 0}
+    - target: {fileID: 452021162078964979, guid: 08f694c12111dbc41b59c2891915b348, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0304
+      objectReference: {fileID: 0}
     - target: {fileID: 7255048074142668619, guid: 08f694c12111dbc41b59c2891915b348, type: 3}
       propertyPath: m_Name
       value: Fire Wiggle 5
