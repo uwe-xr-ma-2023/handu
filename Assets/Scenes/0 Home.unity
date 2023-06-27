@@ -17407,7 +17407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1328040516}
   m_Layer: 0
-  m_Name: Hands Scene 4
+  m_Name: 15 Fingered Hands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23200,6 +23200,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1184605485}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: _15FingeredHands
+      value: 
+      objectReference: {fileID: 1328040515}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: ultraleapService
       value: 
       objectReference: {fileID: 507643763}
@@ -23434,6 +23438,18 @@ PrefabInstance:
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[8].scene._buildIndex
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[1].show15FingeredHands
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[2].show15FingeredHands
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[3].show15FingeredHands
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[0].mainAudioPosition.minutes

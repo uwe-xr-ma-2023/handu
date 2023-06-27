@@ -8,7 +8,7 @@ using Udar.SceneManager;
 public class MainSceneManager : MonoBehaviour
 {
     private int currentSceneIndex = -1;
-    public GameObject handsScene4;
+    public GameObject _15FingeredHands;
     public GameObject handsScene7;
     public AudioSource mainSound;
     [System.Serializable]
@@ -19,9 +19,10 @@ public class MainSceneManager : MonoBehaviour
     }
     [System.Serializable]
     public struct HanduScene
-    {        
+    {
         public SceneField scene;
         public MainAudioPosition mainAudioPosition;
+        public bool show15FingeredHands;
 
     }
     [SerializeField]
@@ -87,9 +88,9 @@ public class MainSceneManager : MonoBehaviour
     private void LoadScene(int sceneIndex)
     {
         var scene = handuScenes[sceneIndex];
-        if (sceneIndex == 1 || sceneIndex == 2)
+        if (scene.show15FingeredHands)
         {
-            EnterScene4();
+            Show15FingeredHands();
         }
         else if (sceneIndex == 8)
         {
@@ -107,25 +108,22 @@ public class MainSceneManager : MonoBehaviour
         {
             return;
         }
-        if (sceneIndex == 1 || sceneIndex == 2)
-        {
-            LeaveScene4();
-        }
         else if (sceneIndex == 8)
         {
             LeaveScene7();
         }
+        Hide15FingeredHands();
         SceneManager.UnloadSceneAsync(handuScenes[sceneIndex].scene.Path);
     }
 
-    private void EnterScene4()
+    private void Show15FingeredHands()
     {
-        handsScene4.SetActive(true);
+        _15FingeredHands.SetActive(true);
     }
 
-    private void LeaveScene4()
+    private void Hide15FingeredHands()
     {
-        handsScene4.SetActive(false);
+        _15FingeredHands.SetActive(false);
     }
 
     private void EnterScene7()
