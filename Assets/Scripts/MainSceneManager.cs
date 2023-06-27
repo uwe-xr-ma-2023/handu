@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Leap.Unity;
 using Udar.SceneManager;
+using System.Linq;
 
 public class MainSceneManager : MonoBehaviour
 {
@@ -31,11 +32,32 @@ public class MainSceneManager : MonoBehaviour
 
     public LeapXRServiceProvider ultraleapService;
     private List<UnityEngine.XR.InputDevice> devices;
-    bool changingScenes = false;
+    private bool changingScenes = false;
+    private float[] sceneStartDeltas;
 
     private void Start()
     {
         devices = new List<UnityEngine.XR.InputDevice>();
+        sceneStartDeltas = handuScenes.Select(GetSecondsDeltaBetweenScenes).ToArray();
+        StartSceneTimer(currentSceneIndex);       
+    }
+
+    /* Timer moves to next scene after set amount of time */
+    private void StartSceneTimer(int sceneIndex)
+    {
+        StopCoroutine("SceneTimer");
+        if (sceneIndex == handuScenes.Count - 1)
+        {
+            return;
+        }
+        StartCoroutine(SceneTimer(sceneStartDeltas[sceneIndex + 1]));
+    }
+
+    private float GetSecondsDeltaBetweenScenes(HanduScene scene, int index)
+    {
+        var sceneStartSeconds = index == 0 ? 0 : GetSecondsFromTime(handuScenes[index - 1].mainAudioPosition);
+        var sceneEndSeconds = GetSecondsFromTime(scene.mainAudioPosition);
+        return sceneEndSeconds - sceneStartSeconds;
     }
 
 
@@ -56,6 +78,16 @@ public class MainSceneManager : MonoBehaviour
         });
 
 
+    }
+
+    private IEnumerator SceneTimer(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        if (currentSceneIndex == handuScenes.Count - 1)
+        {
+            yield return null;
+        }
+        ChangeScene(currentSceneIndex + 1);
     }
 
     private void InitialiseXrDevice()
@@ -88,6 +120,7 @@ public class MainSceneManager : MonoBehaviour
     private void LoadScene(int sceneIndex)
     {
         var scene = handuScenes[sceneIndex];
+        StartSceneTimer(sceneIndex);
         if (scene.show15FingeredHands)
         {
             Show15FingeredHands();
