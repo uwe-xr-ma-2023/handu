@@ -185,15 +185,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 8435769281238777770, guid: 46283829453070c46896cd38a6c0f172, type: 3}
   container: {fileID: 579414896}
-  numberOfParticles: 100
+  numberOfParticles: 1000
   particleScaleMinimum: 0.0136
   particleScaleMaximum: 0.1
-  particleAreaXMin: -3
+  particleAreaXMin: -2
   particleAreaYMin: 0
-  particleAreaZMin: -3
-  particleAreaXMax: 3
-  particleAreaYMax: 3
-  particleAreaZMax: 3
+  particleAreaZMin: -2
+  particleAreaXMax: 2
+  particleAreaYMax: 2
+  particleAreaZMax: 2
 --- !u!4 &609324705
 Transform:
   m_ObjectHideFlags: 0

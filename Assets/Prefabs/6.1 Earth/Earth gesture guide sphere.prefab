@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 1589438089765970356}
   - component: {fileID: 8740540651598224576}
   - component: {fileID: 6917352894829911955}
-  - component: {fileID: 5553076746457743459}
   m_Layer: 0
   m_Name: Earth gesture guide sphere
   m_TagString: Untagged
@@ -174,7 +173,7 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 6917352894829911955}
             m_TargetAssemblyTypeName: HandleCollisionWithHands, Assembly-CSharp
-            m_MethodName: OnContactBegin
+            m_MethodName: OnContactBeginReplaceGameObject
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -304,16 +303,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2367e977dfd5a2e47bd3a33c5a36b6b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5553076746457743459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4193179075179077168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ca624e62f672eb409771fb576f1d2f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shatterPrefab: {fileID: 4924290887047215289, guid: ffdcca878353d1c4ba4b54da5381b7f7, type: 3}
+  shatterPrefab: {fileID: 5756977715582869454, guid: ffdcca878353d1c4ba4b54da5381b7f7, type: 3}

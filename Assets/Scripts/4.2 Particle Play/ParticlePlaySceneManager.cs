@@ -7,7 +7,7 @@ public class ParticlePlaySceneManager : MonoBehaviour
 {
     public GameObject particlePrefab;
     public GameObject container;
-    [Range(0, 100)]
+    [Range(0, 1000)]
     public int numberOfParticles;
     [Range(0, 0.1f)]
     public float particleScaleMinimum;

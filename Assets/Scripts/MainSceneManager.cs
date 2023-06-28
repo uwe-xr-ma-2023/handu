@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Leap.Unity;
 using Udar.SceneManager;
+using System.Linq;
 
 public class MainSceneManager : MonoBehaviour
 {
     private int currentSceneIndex = -1;
-    public GameObject handsScene4;
+    public GameObject _15FingeredHands;
     public GameObject handsScene7;
     public AudioSource mainSound;
     [System.Serializable]
@@ -19,9 +20,10 @@ public class MainSceneManager : MonoBehaviour
     }
     [System.Serializable]
     public struct HanduScene
-    {        
+    {
         public SceneField scene;
         public MainAudioPosition mainAudioPosition;
+        public bool show15FingeredHands;
 
     }
     [SerializeField]
@@ -30,11 +32,32 @@ public class MainSceneManager : MonoBehaviour
 
     public LeapXRServiceProvider ultraleapService;
     private List<UnityEngine.XR.InputDevice> devices;
-    bool changingScenes = false;
+    private bool changingScenes = false;
+    private float[] sceneStartDeltas;
 
     private void Start()
     {
         devices = new List<UnityEngine.XR.InputDevice>();
+        sceneStartDeltas = handuScenes.Select(GetSecondsDeltaBetweenScenes).ToArray();
+        StartSceneTimer(currentSceneIndex);       
+    }
+
+    /* Timer moves to next scene after set amount of time */
+    private void StartSceneTimer(int sceneIndex)
+    {
+        StopCoroutine("SceneTimer");
+        if (sceneIndex == handuScenes.Count - 1)
+        {
+            return;
+        }
+        StartCoroutine(SceneTimer(sceneStartDeltas[sceneIndex + 1]));
+    }
+
+    private float GetSecondsDeltaBetweenScenes(HanduScene scene, int index)
+    {
+        var sceneStartSeconds = index == 0 ? 0 : GetSecondsFromTime(handuScenes[index - 1].mainAudioPosition);
+        var sceneEndSeconds = GetSecondsFromTime(scene.mainAudioPosition);
+        return sceneEndSeconds - sceneStartSeconds;
     }
 
 
@@ -55,6 +78,16 @@ public class MainSceneManager : MonoBehaviour
         });
 
 
+    }
+
+    private IEnumerator SceneTimer(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        if (currentSceneIndex == handuScenes.Count - 1)
+        {
+            yield return null;
+        }
+        ChangeScene(currentSceneIndex + 1);
     }
 
     private void InitialiseXrDevice()
@@ -87,9 +120,10 @@ public class MainSceneManager : MonoBehaviour
     private void LoadScene(int sceneIndex)
     {
         var scene = handuScenes[sceneIndex];
-        if (sceneIndex == 1 || sceneIndex == 2)
+        StartSceneTimer(sceneIndex);
+        if (scene.show15FingeredHands)
         {
-            EnterScene4();
+            Show15FingeredHands();
         }
         else if (sceneIndex == 8)
         {
@@ -107,25 +141,22 @@ public class MainSceneManager : MonoBehaviour
         {
             return;
         }
-        if (sceneIndex == 1 || sceneIndex == 2)
-        {
-            LeaveScene4();
-        }
         else if (sceneIndex == 8)
         {
             LeaveScene7();
         }
+        Hide15FingeredHands();
         SceneManager.UnloadSceneAsync(handuScenes[sceneIndex].scene.Path);
     }
 
-    private void EnterScene4()
+    private void Show15FingeredHands()
     {
-        handsScene4.SetActive(true);
+        _15FingeredHands.SetActive(true);
     }
 
-    private void LeaveScene4()
+    private void Hide15FingeredHands()
     {
-        handsScene4.SetActive(false);
+        _15FingeredHands.SetActive(false);
     }
 
     private void EnterScene7()

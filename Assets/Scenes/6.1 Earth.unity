@@ -288,9 +288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a407d217f26a5742a55bab3eca30b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gestureGuidePrefab: {fileID: 4305741551746112042, guid: 466fad03a45703f4eae40c8906ee4010, type: 3}
+  gestureGuidePrefab: {fileID: 3436569078304514189, guid: 466fad03a45703f4eae40c8906ee4010, type: 3}
   gameObjectContainer: {fileID: 1045739486}
   handAnimationPrefab: {fileID: 509093463859065885, guid: 05de97f866c44184a81fcf04335ecee5, type: 3}
+  elementName: 0
   seatedMode: 0
 --- !u!4 &1916271528
 Transform:

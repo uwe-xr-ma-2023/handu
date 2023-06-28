@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HandleCollisionWithHands : MonoBehaviour
 {
+    public GameObject shatterPrefab;
     private AudioSource audioSource;
     private Renderer _renderer;
     private ElementsSceneManager sceneManager;
@@ -25,6 +26,20 @@ public class HandleCollisionWithHands : MonoBehaviour
         collided = true;
         audioSource.Play();
         _renderer.enabled = false;
+        sceneManager.IncreaseGestureGuideChildCollidedCount();
+        StartCoroutine(WaitForAudioEnd());
+    }
+
+    public void OnContactBeginReplaceGameObject()
+    {
+        if (collided)
+        {
+            return;
+        }
+        collided = true;
+        audioSource.Play();
+        _renderer.enabled = false;
+        Instantiate(shatterPrefab, transform.position, transform.rotation);
         sceneManager.IncreaseGestureGuideChildCollidedCount();
         StartCoroutine(WaitForAudioEnd());
     }
