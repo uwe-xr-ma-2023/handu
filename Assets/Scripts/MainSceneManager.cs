@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using Leap.Unity;
 using Udar.SceneManager;
 using System.Linq;
+using TMPro;
 
 public class MainSceneManager : MonoBehaviour
 {
@@ -34,12 +35,36 @@ public class MainSceneManager : MonoBehaviour
     private List<UnityEngine.XR.InputDevice> devices;
     private bool changingScenes = false;
     private float[] sceneStartDeltas;
+   
+
+    [System.Serializable]
+    public class PicoHeadsetCameraConfig
+    {
+        public string cameraMountName;
+        public float deviceTiltXAxis;
+        public float deviceOffsetYAxis;
+        public float deviceOffsetZAxis;
+        public string deviceId;
+    }
+    [SerializeField]
+    [Tooltip("Headsets have different ultraleap camera mounts with different adjustments. So we have to set these adjustments at runtime")]
+    public PicoHeadsetCameraConfig pico3dPrintCameraConfig = new PicoHeadsetCameraConfig();
+    [SerializeField]
+    [Tooltip("Headsets have different ultraleap camera mounts with different adjustments. So we have to set these adjustments at runtime")]
+    private PicoHeadsetCameraConfig hammerheadCameraConfig = new PicoHeadsetCameraConfig();
+    private IDictionary<string, PicoHeadsetCameraConfig> ourPicoHeadsets = new Dictionary<string, PicoHeadsetCameraConfig>();
+    [Tooltip("Headsets have different ultraleap camera mounts with different adjustments. In play mode we don't have access to the headset device ID, so have to set manually here")]
+    public bool useHammerheadCameraConfigInPlayMode;
 
     private void Start()
     {
         devices = new List<UnityEngine.XR.InputDevice>();
+
         sceneStartDeltas = handuScenes.Select(GetSecondsDeltaBetweenScenes).ToArray();
-        StartSceneTimer(currentSceneIndex);       
+        StartSceneTimer(currentSceneIndex);
+        // Add camera configs that differ per headset
+        ourPicoHeadsets.Add(pico3dPrintCameraConfig.deviceId, pico3dPrintCameraConfig);
+        ourPicoHeadsets.Add(hammerheadCameraConfig.deviceId, hammerheadCameraConfig);
     }
 
     /* Timer moves to next scene after set amount of time */
@@ -93,6 +118,28 @@ public class MainSceneManager : MonoBehaviour
     private void InitialiseXrDevice()
     {
         UnityEngine.XR.InputDevices.GetDevices(devices);
+        SetLeapCameraPosition();
+
+    }
+
+    private void SetLeapCameraPosition()
+    {
+        var deviceId = SystemInfo.deviceUniqueIdentifier;
+        ourPicoHeadsets.TryGetValue(deviceId, out PicoHeadsetCameraConfig headset);
+
+        // In play mode, default to option set in inspector
+        if (headset == null)
+        {
+            headset = useHammerheadCameraConfigInPlayMode ? hammerheadCameraConfig : pico3dPrintCameraConfig;
+        }
+
+
+        if (headset != null)
+        {
+            ultraleapService.deviceOffsetYAxis = headset.deviceOffsetYAxis;
+            ultraleapService.deviceOffsetZAxis = headset.deviceOffsetZAxis;
+            ultraleapService.deviceTiltXAxis = headset.deviceTiltXAxis;
+        }
     }
 
     public void ChangeScene(int newSceneIndex)

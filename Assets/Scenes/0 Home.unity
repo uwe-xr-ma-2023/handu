@@ -23300,6 +23300,18 @@ PrefabInstance:
       value: 7 Beings
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: hammerheadCameraConfig.deviceId
+      value: b44ed8a4a740f30c3d953f109c05c0fb
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: pico3dPrintCameraConfig.deviceId
+      value: c2589567d67f478a76ae7c66a6d33854
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: useHammerheadCameraConfigInPlayMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[0].m_strength
       value: 
       objectReference: {fileID: 0}
@@ -23376,6 +23388,30 @@ PrefabInstance:
       value: Assets/Scenes/7 Beings.unity
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: hammerheadCameraConfig.cameraMountName
+      value: hammerhead
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: hammerheadCameraConfig.deviceTiltXAxis
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: pico3dPrintCameraConfig.cameraMountName
+      value: pico3dPrint
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: pico3dPrintCameraConfig.deviceTiltXAxis
+      value: 4.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: hammerheadCameraConfig.deviceOffsetYAxis
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: hammerheadCameraConfig.deviceOffsetZAxis
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[0].scene._sceneOB
       value: 
       objectReference: {fileID: 102900000, guid: 9db9cda3e59009d4ca44a4d6071f0bd2, type: 3}
@@ -23411,6 +23447,14 @@ PrefabInstance:
       propertyPath: handuScenes.Array.data[8].scene._sceneOB
       value: 
       objectReference: {fileID: 102900000, guid: aa87a018666f9fb43be9f0e14f0316df, type: 3}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: pico3dPrintCameraConfig.deviceOffsetYAxis
+      value: 0.087
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: pico3dPrintCameraConfig.deviceOffsetZAxis
+      value: -0.018
+      objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[0].scene._buildIndex
       value: 1
@@ -23448,6 +23492,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: pico3dPrintCameraConfig.deviceIds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[1].show15FingeredHands
       value: 1
       objectReference: {fileID: 0}
@@ -23458,6 +23506,14 @@ PrefabInstance:
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[3].show15FingeredHands
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: pico3dPrintCameraConfig.deviceIds.Array.data[0]
+      value: ff2eec5cada95877afa8cda820a9cd560606c8c5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: pico3dPrintCameraConfig.deviceIds.Array.data[1]
+      value: c2589567d67f478a76ae7c66a6d33854
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[0].mainAudioPosition.minutes
