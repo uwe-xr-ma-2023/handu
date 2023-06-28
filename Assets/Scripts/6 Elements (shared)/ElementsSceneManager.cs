@@ -10,6 +10,8 @@ public class ElementsSceneManager : MonoBehaviour
     public GameObject gestureGuidePrefab;
     public GameObject gameObjectContainer;
     public GameObject handAnimationPrefab;
+    public enum ElementNames { earth, water, wind, fire };
+    public ElementNames elementName;
     public bool seatedMode;
     private float seatedRange = 0.01f;
     private float standingRange = 0.5f;
@@ -20,11 +22,13 @@ public class ElementsSceneManager : MonoBehaviour
     private int gestureGuideChildCollidedCount;
     private bool handAnimationTrackHands = false;
     private GameObject currentHandAnimationGameObjects;
+    private GameObject handAnimationContainer;
 
     void Start()
     {
         mainSceneManager = GameObject.Find("MainSceneManager").GetComponent<MainSceneManager>();
         gestureGuideStartPosRange = seatedMode ? seatedRange : standingRange;
+        handAnimationContainer = new GameObject($"HandAnimationContainer{elementName.ToString().Capitalize()}");
         CreateGestureGuide();
     }
 
@@ -74,8 +78,8 @@ public class ElementsSceneManager : MonoBehaviour
         (Quaternion, Vector3) handPositionRotation = GetHandPositionRotation();
         var rotation = handPositionRotation.Item1;
         var position = handPositionRotation.Item2;
-        // instatiated inside container game object so that it is deleted on scene change
-        currentHandAnimationGameObjects = Instantiate(handAnimationPrefab, position, rotation, gameObjectContainer.transform);
+        // instatiated inside hand animation container so that it remains on scene change
+        currentHandAnimationGameObjects = Instantiate(handAnimationPrefab, position, rotation, handAnimationContainer.transform);
         handAnimationTrackHands = true;
         StartCoroutine(WaitForHandPrefabHide());
     }
