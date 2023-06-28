@@ -40,6 +40,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2902802244429072741}
     m_Modifications:
+    - target: {fileID: 452021162078964979, guid: 08f694c12111dbc41b59c2891915b348, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0228
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639198327674695281, guid: 08f694c12111dbc41b59c2891915b348, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -1.7143825e-24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639198327674695281, guid: 08f694c12111dbc41b59c2891915b348, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639198327674695281, guid: 08f694c12111dbc41b59c2891915b348, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -1.7143825e-24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639198327674695281, guid: 08f694c12111dbc41b59c2891915b348, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 5.25e-43
+      objectReference: {fileID: 0}
     - target: {fileID: 7255048074142668619, guid: 08f694c12111dbc41b59c2891915b348, type: 3}
       propertyPath: m_Name
       value: Fire Wiggle 5 Variant
