@@ -78,6 +78,10 @@ public class ElementsSceneManager : MonoBehaviour
         (Quaternion, Vector3) handPositionRotation = GetHandPositionRotation();
         var rotation = handPositionRotation.Item1;
         var position = handPositionRotation.Item2;
+        if (currentHandAnimationGameObjects != null)
+        {
+            Destroy(currentHandAnimationGameObjects);
+        }
         // instatiated inside hand animation container so that it remains on scene change
         currentHandAnimationGameObjects = Instantiate(handAnimationPrefab, position, rotation, handAnimationContainer.transform);
         handAnimationTrackHands = true;
