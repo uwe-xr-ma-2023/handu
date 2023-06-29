@@ -9,6 +9,8 @@ public class HandleCollisionWithHands : MonoBehaviour
     private Renderer _renderer;
     private ElementsSceneManager sceneManager;
     private bool collided = false;
+    private GameObject shatterGameObject;
+    private float timeToDestroyShatterGameObject = 0.5f;
 
     private void Start()
     {
@@ -39,9 +41,10 @@ public class HandleCollisionWithHands : MonoBehaviour
         collided = true;
         audioSource.Play();
         _renderer.enabled = false;
-        Instantiate(shatterPrefab, transform.position, transform.rotation);
+        shatterGameObject = Instantiate(shatterPrefab, transform.position, transform.rotation);
         sceneManager.IncreaseGestureGuideChildCollidedCount();
         StartCoroutine(WaitForAudioEnd());
+        StartCoroutine(WaitForDestroyShatterGameObject());
     }
 
     IEnumerator WaitForAudioEnd()
@@ -49,5 +52,11 @@ public class HandleCollisionWithHands : MonoBehaviour
     {
         yield return new WaitUntil(() => audioSource.isPlaying == false);
         Destroy(gameObject);
+    }
+
+    IEnumerator WaitForDestroyShatterGameObject()
+    {
+        yield return new WaitForSeconds(timeToDestroyShatterGameObject);
+        Destroy(shatterGameObject);
     }
 }
