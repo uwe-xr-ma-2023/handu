@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5668062036680500691}
   - component: {fileID: 7871942581980467171}
   m_Layer: 0
-  m_Name: Spiral_01.1 Tornado
+  m_Name: TornadoWind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
