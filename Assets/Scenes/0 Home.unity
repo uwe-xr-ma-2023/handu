@@ -23536,6 +23536,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[6].show15FingeredHands
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: pico3dPrintCameraConfig.deviceIds.Array.data[0]
       value: ff2eec5cada95877afa8cda820a9cd560606c8c5
       objectReference: {fileID: 0}
@@ -23545,67 +23549,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[0].mainAudioPosition.minutes
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[0].mainAudioPosition.seconds
-      value: 45
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[1].mainAudioPosition.minutes
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[1].mainAudioPosition.seconds
-      value: 16
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[2].mainAudioPosition.minutes
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[2].mainAudioPosition.seconds
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[3].mainAudioPosition.minutes
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[3].mainAudioPosition.seconds
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
-      propertyPath: handuScenes.Array.data[4].mainAudioPosition.minutes
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[4].mainAudioPosition.minutes
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[4].mainAudioPosition.seconds
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
-      propertyPath: handuScenes.Array.data[5].mainAudioPosition.minutes
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
-      propertyPath: handuScenes.Array.data[6].mainAudioPosition.minutes
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
-      propertyPath: handuScenes.Array.data[6].mainAudioPosition.seconds
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
-      propertyPath: handuScenes.Array.data[7].mainAudioPosition.minutes
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[5].mainAudioPosition.minutes
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[5].mainAudioPosition.seconds
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[6].mainAudioPosition.minutes
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[6].mainAudioPosition.seconds
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[7].mainAudioPosition.minutes
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[7].mainAudioPosition.seconds
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[8].mainAudioPosition.minutes
-      value: 21
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[8].mainAudioPosition.seconds
-      value: 45
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4427231722471175114, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: m_Name
