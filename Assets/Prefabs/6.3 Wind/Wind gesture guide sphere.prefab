@@ -194,7 +194,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5849046989794950732, guid: 6828ae4386e13074b862eea3343745d9, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3ce0325054dd9544c92d727e7c1fec6f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd442a0ffdd83b24c97f0ae8e0bf609d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2367e977dfd5a2e47bd3a33c5a36b6b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shatterPrefab: {fileID: 0}
 --- !u!95 &2262884253070741571
 Animator:
   serializedVersion: 5
