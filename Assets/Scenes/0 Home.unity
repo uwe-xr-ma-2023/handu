@@ -22685,6 +22685,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Attachment Hand Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 3287841046167000024, guid: 4baa4399ad48b744d8b4b0440c605781, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3287841046167000026, guid: 4baa4399ad48b744d8b4b0440c605781, type: 3}
       propertyPath: _leapProvider
       value: 
