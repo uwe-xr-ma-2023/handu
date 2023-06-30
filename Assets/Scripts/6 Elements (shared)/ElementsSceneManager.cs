@@ -23,6 +23,7 @@ public class ElementsSceneManager : MonoBehaviour
     private bool handAnimationTrackHands = false;
     private GameObject currentHandAnimationGameObjects;
     private GameObject handAnimationContainer;
+    private bool currentHandIsLeft = false;
 
     void Start()
     {
@@ -37,18 +38,27 @@ public class ElementsSceneManager : MonoBehaviour
         // Track hand animation against user hands
         if (handAnimationTrackHands && currentHandAnimationGameObjects)
         {
-            (Quaternion, Vector3) handPositionRotation = GetHandPositionRotation();
-            currentHandAnimationGameObjects.transform.rotation = handPositionRotation.Item1;
-            currentHandAnimationGameObjects.transform.position = handPositionRotation.Item2;
+            var (rotation, position) = GetHandPositionRotation();
+            if (rotation != null && position != null)
+            {
+                currentHandAnimationGameObjects.transform.rotation = (Quaternion)rotation;
+                currentHandAnimationGameObjects.transform.position = (Vector3)position;
+            }
+            
         }
     }
 
 
-    private (Quaternion, Vector3) GetHandPositionRotation()
+    private (Quaternion?, Vector3?) GetHandPositionRotation()
     {
-        var rightHand = mainSceneManager.ultraleapService.GetHand(Chirality.Right);
-        var rightHandIndexFinger = rightHand.Fingers.Find((finger) => finger.Type == Leap.Finger.FingerType.TYPE_INDEX);
-        return (rightHand.Rotation, rightHandIndexFinger.TipPosition);
+        var currentHand = currentHandIsLeft ? Chirality.Left : Chirality.Right;
+        var hand = mainSceneManager.ultraleapService.GetHand(currentHand);
+        if (hand == null)
+        {
+            return (null, null);
+        }
+        var indexFinger = hand.Fingers.Find((finger) => finger.Type == Leap.Finger.FingerType.TYPE_INDEX);
+        return (hand.Rotation, indexFinger.TipPosition);
     }
 
     private void CreateGestureGuide()
@@ -63,11 +73,12 @@ public class ElementsSceneManager : MonoBehaviour
         gestureGuideChildCount = gestureGuide.transform.childCount;
     }
 
-    public void IncreaseGestureGuideChildCollidedCount()
+    public void IncreaseGestureGuideChildCollidedCount(bool isLeftHand)
     {
         gestureGuideChildCollidedCount++;
         if (gestureGuideChildCollidedCount == gestureGuideChildCount)
         {
+            currentHandIsLeft = isLeftHand;
             CreateGestureGuide();
             CreateHandAnimation();
         }
@@ -75,15 +86,17 @@ public class ElementsSceneManager : MonoBehaviour
 
     private void CreateHandAnimation()
     {
-        (Quaternion, Vector3) handPositionRotation = GetHandPositionRotation();
-        var rotation = handPositionRotation.Item1;
-        var position = handPositionRotation.Item2;
+        var (rotation, position) = GetHandPositionRotation();
+        if (rotation == null || position == null)
+        {
+            return;
+        }
         if (currentHandAnimationGameObjects != null)
         {
             Destroy(currentHandAnimationGameObjects);
         }
         // instatiated inside hand animation container so that it remains on scene change
-        currentHandAnimationGameObjects = Instantiate(handAnimationPrefab, position, rotation, handAnimationContainer.transform);
+        currentHandAnimationGameObjects = Instantiate(handAnimationPrefab, (Vector3)position, (Quaternion)rotation, handAnimationContainer.transform);
         handAnimationTrackHands = true;
         StartCoroutine(WaitForHandPrefabHide());
     }
