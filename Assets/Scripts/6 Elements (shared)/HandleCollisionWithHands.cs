@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Leap.Unity.Interaction;
 
 public class HandleCollisionWithHands : MonoBehaviour
 {
@@ -11,6 +12,21 @@ public class HandleCollisionWithHands : MonoBehaviour
     private bool collided = false;
     private GameObject shatterGameObject;
     private float timeToDestroyShatterGameObject = 0.5f;
+    private InteractionBehaviour interactionBehaviour;
+
+    private void Awake()
+    {
+        interactionBehaviour = GetComponent<InteractionBehaviour>();
+        // Have to add events that differ per hand via code not UI
+        // https://discord.com/channels/994213697490800670/1123598350164426872
+        interactionBehaviour.OnPerControllerContactBegin -= OnContactBegin;
+        interactionBehaviour.OnPerControllerContactBegin += OnContactBegin;
+    }
+
+    private void OnDestroy()
+    {
+        interactionBehaviour.OnPerControllerContactBegin -= OnContactBegin;
+    }
 
     private void Start()
     {
@@ -19,7 +35,7 @@ public class HandleCollisionWithHands : MonoBehaviour
         sceneManager = GameObject.Find("Elements Scene Manager").GetComponent<ElementsSceneManager>();
     }
 
-    public void OnContactBegin()
+    public void OnContactBegin(InteractionController controller)
     {
         if (collided)
         {
@@ -28,23 +44,13 @@ public class HandleCollisionWithHands : MonoBehaviour
         collided = true;
         audioSource.Play();
         _renderer.enabled = false;
-        sceneManager.IncreaseGestureGuideChildCollidedCount();
+        sceneManager.IncreaseGestureGuideChildCollidedCount(controller.isLeft);
         StartCoroutine(WaitForAudioEnd());
-    }
 
-    public void OnContactBeginReplaceGameObject()
-    {
-        if (collided)
-        {
-            return;
+        if (shatterPrefab != null) {
+            shatterGameObject = Instantiate(shatterPrefab, transform.position, transform.rotation);
+            StartCoroutine(WaitForDestroyShatterGameObject());
         }
-        collided = true;
-        audioSource.Play();
-        _renderer.enabled = false;
-        shatterGameObject = Instantiate(shatterPrefab, transform.position, transform.rotation);
-        sceneManager.IncreaseGestureGuideChildCollidedCount();
-        StartCoroutine(WaitForAudioEnd());
-        StartCoroutine(WaitForDestroyShatterGameObject());
     }
 
     IEnumerator WaitForAudioEnd()
