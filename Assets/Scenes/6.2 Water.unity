@@ -123,6 +123,238 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &194554815
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 559530549}
+    m_Modifications:
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305741551746112042, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_Name
+      value: Water gesture guide 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+--- !u!4 &194554816 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+  m_PrefabInstance: {fileID: 194554815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &412281495
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 559530549}
+    m_Modifications:
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305741551746112042, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_Name
+      value: Water gesture guide 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+--- !u!4 &412281496 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+  m_PrefabInstance: {fileID: 412281495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &559530548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559530549}
+  m_Layer: 0
+  m_Name: Gesture guide positions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &559530549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559530548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1309544110}
+  - {fileID: 194554816}
+  - {fileID: 412281496}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1309544109
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 559530549}
+    m_Modifications:
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305741551746112042, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+      propertyPath: m_Name
+      value: Water gesture guide 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+--- !u!4 &1309544110 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3517318274082750237, guid: d7c24958c6bc2fe47a1323f966b3334e, type: 3}
+  m_PrefabInstance: {fileID: 1309544109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1574212360
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +419,10 @@ MonoBehaviour:
   gameObjectContainer: {fileID: 1574212360}
   handAnimationPrefab: {fileID: 509093463859065885, guid: 2655081de50e13a4281480efd1ffad5c, type: 3}
   elementName: 1
-  seatedMode: 0
+  gestureGuidePositions:
+  - {fileID: 1309544110}
+  - {fileID: 194554816}
+  - {fileID: 412281496}
 --- !u!4 &1928750566
 Transform:
   m_ObjectHideFlags: 0

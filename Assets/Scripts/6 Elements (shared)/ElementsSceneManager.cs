@@ -12,12 +12,10 @@ public class ElementsSceneManager : MonoBehaviour
     public GameObject handAnimationPrefab;
     public enum ElementNames { earth, water, wind, fire };
     public ElementNames elementName;
-    public bool seatedMode;
-    private float seatedRange = 0.01f;
-    private float standingRange = 0.5f;
+    public Transform[] gestureGuidePositions;
+    private int currentGestureGuidePositionIndex = 0;
     private float timeToHideHands = 5f;
     private MainSceneManager mainSceneManager;
-    private float gestureGuideStartPosRange;
     private int gestureGuideChildCount;
     private int gestureGuideChildCollidedCount;
     private bool handAnimationTrackHands = false;
@@ -28,7 +26,6 @@ public class ElementsSceneManager : MonoBehaviour
     void Start()
     {
         mainSceneManager = GameObject.Find("MainSceneManager").GetComponent<MainSceneManager>();
-        gestureGuideStartPosRange = seatedMode ? seatedRange : standingRange;
         handAnimationContainer = new GameObject($"HandAnimationContainer{elementName.ToString().Capitalize()}");
         CreateGestureGuide();
     }
@@ -64,20 +61,20 @@ public class ElementsSceneManager : MonoBehaviour
     private void CreateGestureGuide()
     {
         gestureGuideChildCollidedCount = 0;
-        float randomX = Random.Range(-gestureGuideStartPosRange, gestureGuideStartPosRange);
-        float randomY = Random.Range(-gestureGuideStartPosRange, gestureGuideStartPosRange);
-        Vector3 randomOffset = new Vector3(randomX, randomY, 0);
-        Vector3 randomPosition = gestureGuidePrefab.transform.position + randomOffset;
+        var gestureGuidePosition = gestureGuidePositions[currentGestureGuidePositionIndex];
         // instatiated inside container game object so that it is deleted on scene change
-        GameObject gestureGuide = Instantiate(gestureGuidePrefab, randomPosition, gestureGuidePrefab.transform.rotation, gameObjectContainer.transform);
+        GameObject gestureGuide = Instantiate(gestureGuidePrefab, gestureGuidePosition.transform.position, gestureGuidePosition.transform.rotation, gameObjectContainer.transform);
         gestureGuideChildCount = gestureGuide.transform.childCount;
     }
 
     public void IncreaseGestureGuideChildCollidedCount(bool isLeftHand)
     {
         gestureGuideChildCollidedCount++;
-        if (gestureGuideChildCollidedCount == gestureGuideChildCount)
+        bool gestureCompleted = gestureGuideChildCollidedCount == gestureGuideChildCount;
+        if (gestureCompleted)
         {
+            bool isLastGesturePosition = currentGestureGuidePositionIndex == gestureGuidePositions.Length - 1;
+            currentGestureGuidePositionIndex = isLastGesturePosition ? 0 : currentGestureGuidePositionIndex  + 1;
             currentHandIsLeft = isLeftHand;
             CreateGestureGuide();
             CreateHandAnimation();
