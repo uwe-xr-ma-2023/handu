@@ -19,6 +19,39 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &-3923977063499754300
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FX Sea
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 3636c5c54202f9849bc0533089e5c47c
+  m_Children: []
+  m_Volume: f79e6b03bafe7114b9f892e5509091d6
+  m_Pitch: 339dddd9010637e448deb22a50df586f
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -891253482628998183}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &-891253482628998183
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 7d3012920b7d4404ba5a019ef1e0f012
+  m_EffectName: Attenuation
+  m_MixLevel: 37c929e1ef8cbbb47a8a2fae5b3320c8
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -40,6 +73,7 @@ AudioMixerController:
     - e7a2221e2b1a81a47a1c3f7b32c3b03a
     - 872dafa61a888e747a5adbca0fc20746
     - f219d05fc8203ff40a9bc03dca138cec
+    - 3636c5c54202f9849bc0533089e5c47c
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -55,6 +89,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: -5326774923415343993}
   - {fileID: 5849046989794950732}
+  - {fileID: -3923977063499754300}
   m_Volume: 0d2c0b27400df3e46b91bc25b205fea0
   m_Pitch: 5e763b884b0e37c499e65db17a88dff4
   m_Send: 00000000000000000000000000000000
