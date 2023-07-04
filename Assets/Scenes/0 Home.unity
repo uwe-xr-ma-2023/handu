@@ -23682,7 +23682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: useHammerheadCameraConfigInPlayMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[0].m_strength
@@ -23774,7 +23774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: pico3dPrintCameraConfig.deviceTiltXAxis
-      value: 4.74
+      value: 3.552
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: hammerheadCameraConfig.deviceOffsetYAxis
@@ -23822,11 +23822,11 @@ PrefabInstance:
       objectReference: {fileID: 102900000, guid: aa87a018666f9fb43be9f0e14f0316df, type: 3}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: pico3dPrintCameraConfig.deviceOffsetYAxis
-      value: 0.087
+      value: 0.064
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: pico3dPrintCameraConfig.deviceOffsetZAxis
-      value: -0.018
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[0].scene._buildIndex
