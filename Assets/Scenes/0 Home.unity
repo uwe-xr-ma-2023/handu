@@ -4342,6 +4342,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 57018627950740296, guid: e7e358565e530214c97adba8c82fedc6, type: 3}
   m_PrefabInstance: {fileID: 246864341}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &246864343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1015311468456129628, guid: e7e358565e530214c97adba8c82fedc6, type: 3}
+  m_PrefabInstance: {fileID: 246864341}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &412084394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23568,6 +23573,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: mainHands
+      value: 
+      objectReference: {fileID: 246864343}
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: mainSound
       value: 

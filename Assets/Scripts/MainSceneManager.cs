@@ -13,6 +13,8 @@ public class MainSceneManager : MonoBehaviour
     public GameObject _15FingeredHands;
     public GameObject handsScene7;
     public AudioSource mainSound;
+    [Tooltip("Ultraleap tracked hand prefabs. Hidden before scene 3")]
+    public GameObject mainHands;
     [System.Serializable]
     public struct MainAudioPosition
     {
@@ -65,6 +67,8 @@ public class MainSceneManager : MonoBehaviour
         // Add camera configs that differ per headset
         ourPicoHeadsets.Add(pico3dPrintCameraConfig.deviceId, pico3dPrintCameraConfig);
         ourPicoHeadsets.Add(hammerheadCameraConfig.deviceId, hammerheadCameraConfig);
+
+        mainHands.SetActive(false);
     }
 
     /* Timer moves to next scene after set amount of time */
@@ -168,6 +172,7 @@ public class MainSceneManager : MonoBehaviour
     {
         var scene = handuScenes[sceneIndex];
         StartSceneTimer(sceneIndex);
+        mainHands.SetActive(true);
         if (scene.show15FingeredHands)
         {
             Show15FingeredHands();
