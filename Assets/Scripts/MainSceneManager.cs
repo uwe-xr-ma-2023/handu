@@ -37,6 +37,7 @@ public class MainSceneManager : MonoBehaviour
     private List<UnityEngine.XR.InputDevice> devices;
     private bool changingScenes = false;
     private float[] sceneStartDeltas;
+    private Coroutine currentSceneTimer;
    
 
     [System.Serializable]
@@ -74,12 +75,15 @@ public class MainSceneManager : MonoBehaviour
     /* Timer moves to next scene after set amount of time */
     private void StartSceneTimer(int sceneIndex)
     {
-        StopCoroutine("SceneTimer");
+        if (currentSceneTimer != null)
+        {
+            StopCoroutine(currentSceneTimer);
+        }
         if (sceneIndex == handuScenes.Count - 1)
         {
             return;
         }
-        StartCoroutine(SceneTimer(sceneStartDeltas[sceneIndex + 1]));
+        currentSceneTimer = StartCoroutine(SceneTimer(sceneStartDeltas[sceneIndex + 1]));
     }
 
     private float GetSecondsDeltaBetweenScenes(HanduScene scene, int index)
@@ -183,7 +187,10 @@ public class MainSceneManager : MonoBehaviour
         }
         SceneManager.LoadScene(scene.scene.Path, LoadSceneMode.Additive);
         currentSceneIndex = sceneIndex;
-        mainSound.time = GetSecondsFromTime(scene.mainAudioPosition);
+        if (mainSound != null)
+        {
+            mainSound.time = GetSecondsFromTime(scene.mainAudioPosition);
+        }
         StartCoroutine(DebounceSceneChange());
     }
 
