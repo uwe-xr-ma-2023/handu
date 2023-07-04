@@ -64,6 +64,7 @@ public class ElementsSceneManager : MonoBehaviour
         var gestureGuidePosition = gestureGuidePositions[currentGestureGuidePositionIndex];
         // instatiated inside container game object so that it is deleted on scene change
         GameObject gestureGuide = Instantiate(gestureGuidePrefab, gestureGuidePosition.transform.position, gestureGuidePosition.transform.rotation, gameObjectContainer.transform);
+        gestureGuide.transform.localScale = gestureGuidePosition.transform.localScale;
         gestureGuideChildCount = gestureGuide.transform.childCount;
     }
 
@@ -95,8 +96,7 @@ public class ElementsSceneManager : MonoBehaviour
             Destroy(currentHandAnimationGameObjects);
         }
         // instatiated inside hand animation container so that it remains on scene change
-        currentHandAnimationGameObjects = Instantiate(handAnimationPrefab, (Vector3)position, (Quaternion)rotation, handAnimationContainer.transform);
-        handAnimationTrackHands = true;
+        currentHandAnimationGameObjects = Instantiate(handAnimationPrefab, (Vector3)position, (Quaternion)rotation, handAnimationContainer.transform);        handAnimationTrackHands = true;
         StartCoroutine(WaitForHandPrefabHide());
     }
 
