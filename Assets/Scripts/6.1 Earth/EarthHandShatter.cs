@@ -14,7 +14,7 @@ public class EarthHandShatter : MonoBehaviour
     private IEnumerator ShowShatterPrefab()
     {
         yield return new WaitForSeconds(waitForShatter);
-        Instantiate(shatterPrefab, transform.position, transform.rotation);
+        Instantiate(shatterPrefab, transform.position, transform.rotation, gameObject.transform.parent.transform);
         Destroy(gameObject);
     }
 }

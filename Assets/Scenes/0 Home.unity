@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8611,7 +8611,38 @@ Transform:
   - {fileID: 2055214599}
   - {fileID: 2089582092}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &723606445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 723606446}
+  m_Layer: 0
+  m_Name: Elements Hand Animations
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &723606446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723606445}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &732039781
 GameObject:
@@ -8717,7 +8748,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &758226529
 PrefabInstance:
@@ -17687,7 +17718,7 @@ Transform:
   - {fileID: 1106152254}
   - {fileID: 1837721061}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1328040515
 GameObject:
@@ -17720,7 +17751,7 @@ Transform:
   - {fileID: 989189603}
   - {fileID: 204763781}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1373792533
 PrefabInstance:
@@ -23219,7 +23250,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2055214598
 GameObject:
@@ -23972,6 +24003,62 @@ PrefabInstance:
     - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: handuScenes.Array.data[8].mainAudioPosition.seconds
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.data[0].minutes
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.data[0].seconds
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.data[1].minutes
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.data[1].seconds
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.data[0].gameObject
+      value: 
+      objectReference: {fileID: 723606445}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.data[1].gameObject
+      value: 
+      objectReference: {fileID: 246864343}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.data[2].gameObject
+      value: 
+      objectReference: {fileID: 1184605485}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.data[0].fadeOutTime.minutes
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.data[0].fadeOutTime.seconds
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.data[1].fadeOutTime.minutes
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.data[1].fadeOutTime.seconds
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.data[2].fadeOutTime.minutes
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615917053687258900, guid: 124e974096b36004485d395d2c569a57, type: 3}
+      propertyPath: handuScenes.Array.data[8].fadeOutElements.Array.data[2].fadeOutTime.seconds
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4427231722471175114, guid: 124e974096b36004485d395d2c569a57, type: 3}
       propertyPath: m_Name

@@ -22,12 +22,18 @@ public class MainSceneManager : MonoBehaviour
         public int seconds;
     }
     [System.Serializable]
+    public struct FadeOutElement
+    {
+        public GameObject gameObject;
+        public MainAudioPosition fadeOutTime;
+    }
+    [System.Serializable]
     public struct HanduScene
     {
         public SceneField scene;
         public MainAudioPosition mainAudioPosition;
         public bool show15FingeredHands;
-
+        public FadeOutElement[] fadeOutElements;
     }
     [SerializeField]
     private List<HanduScene> handuScenes = new List<HanduScene>();
@@ -39,7 +45,6 @@ public class MainSceneManager : MonoBehaviour
     private float[] sceneStartDeltas;
     private Coroutine currentSceneTimer;
    
-
     [System.Serializable]
     public class PicoHeadsetCameraConfig
     {
@@ -187,11 +192,34 @@ public class MainSceneManager : MonoBehaviour
         }
         SceneManager.LoadScene(scene.scene.Path, LoadSceneMode.Additive);
         currentSceneIndex = sceneIndex;
+        float sceneStartSeconds = GetSecondsFromTime(scene.mainAudioPosition);
         if (mainSound != null)
         {
-            mainSound.time = GetSecondsFromTime(scene.mainAudioPosition);
+            mainSound.time = sceneStartSeconds;
+        }
+        if (scene.fadeOutElements != null)
+        {
+            StartSceneFadeOutElementsTimers(scene.fadeOutElements, sceneStartSeconds);
         }
         StartCoroutine(DebounceSceneChange());
+    }
+
+    private void StartSceneFadeOutElementsTimers(FadeOutElement[] fadeOutElements, float sceneStartSeconds)
+    {
+        for (int i = 0; i < fadeOutElements.Length; i++)
+        {
+
+            var element = fadeOutElements[i];
+            var elementFadeOutSeconds = GetSecondsFromTime(element.fadeOutTime);
+            var delta = elementFadeOutSeconds - sceneStartSeconds;
+            StartCoroutine(FadeOutElementsTimer(element.gameObject, delta));
+        }
+    }
+
+    private IEnumerator FadeOutElementsTimer(GameObject element, float time)
+    {
+        yield return new WaitForSeconds(time);
+        element.SetActive(false);
     }
 
     private void UnloadScene(int sceneIndex)

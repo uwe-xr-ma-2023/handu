@@ -27,6 +27,8 @@ public class ElementsSceneManager : MonoBehaviour
     {
         mainSceneManager = GameObject.Find("MainSceneManager").GetComponent<MainSceneManager>();
         handAnimationContainer = new GameObject($"HandAnimationContainer{elementName.ToString().Capitalize()}");
+        var handAnimationContainerRoot = GameObject.Find("Elements Hand Animations");
+        handAnimationContainer.transform.SetParent(handAnimationContainerRoot.transform, false);
         CreateGestureGuide();
     }
 
