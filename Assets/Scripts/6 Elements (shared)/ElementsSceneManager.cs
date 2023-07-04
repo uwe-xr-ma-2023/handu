@@ -73,8 +73,10 @@ public class ElementsSceneManager : MonoBehaviour
         bool gestureCompleted = gestureGuideChildCollidedCount == gestureGuideChildCount;
         if (gestureCompleted)
         {
-            bool isLastGesturePosition = currentGestureGuidePositionIndex == gestureGuidePositions.Length - 1;
-            currentGestureGuidePositionIndex = isLastGesturePosition ? 0 : currentGestureGuidePositionIndex  + 1;
+            int lastGesturePositionIndex = gestureGuidePositions.Length - 1;
+            bool isLastGesturePosition = currentGestureGuidePositionIndex == lastGesturePositionIndex;
+            // Keep user on last gesture position if they complete all positions
+            currentGestureGuidePositionIndex = isLastGesturePosition ? lastGesturePositionIndex : currentGestureGuidePositionIndex  + 1;
             currentHandIsLeft = isLeftHand;
             CreateGestureGuide();
             CreateHandAnimation();
