@@ -320,7 +320,6 @@ MonoBehaviour:
   orbPrefab: {fileID: 2942899355471292517, guid: 09f3b4ed6cad1c84b91c3f6d48253d47, type: 3}
   sceneContainer: {fileID: 807878341}
   poseHoldDuration: 0.2
-  handDistanceFromSphereStopTracking: 0.1
 --- !u!4 &840585900
 Transform:
   m_ObjectHideFlags: 0
