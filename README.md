@@ -5,7 +5,7 @@ Handu is a many-fingered being born out of the digital, primordial sea, who crea
 
 This was a student project created on the Virtual and Extended Realities MA at UWE, Bristol. Brief was set by industry client Ultraleap who supplied hand tracking technology and supported us.
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/N58rosr4VTs/0.jpg)](https://www.youtube.com/watch?v=N58rosr4VTs)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/N58rosr4VTs/0.jpg?s=1)](https://www.youtube.com/watch?v=N58rosr4VTs)
 
 ## Required devices
 
